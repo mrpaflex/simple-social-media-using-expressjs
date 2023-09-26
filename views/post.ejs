@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments</title>
+</head>
+<body>
+    <h1>Make A Post Now</h1>
+    <form action="post/createPost" enctype="multipart/form-data" method="POST" >
+        
+        <label for="AuthNAme">Author Name</label><br>
+        <input type="text" name="authorName" id=""><br>
+        <label for="title">Post Title</label><br>
+        <input type="text" name="title" id=""><br>
+        <label for="post">Post</label><br>
+        <textarea name="post" id="" cols="70" rows="10"></textarea><br>
+        <label for="image">Image</label><br>
+        <input type="file" name="file" id=""><br>
+
+        <button type="submit">CREATE POST</button>
+    </form>
+
+</body>
+</html>
