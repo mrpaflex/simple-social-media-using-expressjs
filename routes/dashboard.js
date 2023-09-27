@@ -8,7 +8,8 @@ const upload = require("../middleware/multer");
 
 router.get('/', ensureAuth, dashBController.gotoDashboard)
 router.get('/post', ensureAuth, postController.gotopost )
+router.get('/myPost', ensureAuth, postController.myPosts )
 
-router.post('/createPost', upload.single("file"), postController.MakePost )
+router.post('/createPost', ensureAuth, upload.single("file"), postController.MakePost )
 
 module.exports = router;

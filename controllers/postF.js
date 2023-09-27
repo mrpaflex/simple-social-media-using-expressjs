@@ -5,13 +5,17 @@ module.exports = {
     gotopost: (req, res)=>{
         res.render('post')
     },
+
+    myPosts: (req, res)=>{
+        res.render('myposts')
+    },
+
     MakePost: async (req, res)=>{
      try {
         const {authorName, title, post} = req.body;
 
-        const result = await cloudinary.uploader.upload(req.file.path);
-        console.log(result)
-
+        const result = await cloudinary.uploader.upload(req.file.path)
+    
         await Post.create({
             authorName: authorName,
             image: result.secure_url,
@@ -24,6 +28,7 @@ module.exports = {
         })
         console.log('post added')
         res.redirect('/dashboard')
+
      } catch (error) {
         console.log(error)
      }

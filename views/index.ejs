@@ -12,5 +12,19 @@
 
     <a href="/login">Sign-in</a>
     <a href="/signup">sign-up</a>
+
+    <section>
+        <ul>
+            <% for(let i=0; i<posts.length; i++) {%>
+              <li>
+                <span>Author Name: <%= posts[i].authorName %></span><br>
+                <span>Title: <%= posts[i].title %></span><br>
+                <a href="#"><img src="<%= posts[i].image%>" alt="" width="15%"></a><br>
+                <span>Post: <%= posts[i].post %></span><br>
+                </a>
+              </li>
+            <% } %>
+        </ul>
+    </section>
 </body>
 </html>

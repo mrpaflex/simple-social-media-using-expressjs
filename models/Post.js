@@ -17,13 +17,11 @@ const PostSchema = new mongoose.Schema({
     userId: {
         type: String, 
         require: true},
-    image: {
-        type: String, 
-        require: true},
-    cloudinaryId: {
-        type: String,
-        require: true,
-      },
+        
+    image: String, 
+
+    cloudinaryId: String,
+        
     createdAt: {
         type: Date,
         default: Date.now
