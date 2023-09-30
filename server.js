@@ -6,6 +6,7 @@ const session = require('express-session')
 const mainRoutes = require('./routes/main')
 const dashboardRoutes = require('./routes/dashboard')
 const connectDB = require('./config/database')
+const methodOverride = require("method-override");
 
 require('dotenv').config({path: './config/.env'})
 
@@ -22,11 +23,15 @@ app.use(express.json())
 //static file
 app.use(express.static("public"));
 
+//to overide put and get method
+
+app.use(methodOverride("_method"));
+
 
 app.use(session({
-    secret: 'mohbad-dead',
+    secret: process.env.SECRET_TOKEN,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: MongoStore.create({mongoUrl: process.env.DB_URI}),
   }));
 

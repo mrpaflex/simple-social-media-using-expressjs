@@ -7,6 +7,7 @@ module.exports = {
 
 signup:  async (req, res, next)=>{
 
+
 const {email, username, password, confirmPassword} = req.body;
 
     let errors = [];
@@ -56,10 +57,11 @@ const {email, username, password, confirmPassword} = req.body;
                     
                 }
         }
-    // res.render('dashboard')
     },
     
     loginNow: async (req, res, next)=>{
+
+        
         passport.authenticate('local', (err, user, info)=>{
            if(err) {
             return next(err)
@@ -76,5 +78,14 @@ const {email, username, password, confirmPassword} = req.body;
            })
         })(req, res, next);
     },
+
+  
+
+    logout: (req, res) => {
+        req.logout(()=>{
+            res.redirect('/'); 
+        }); 
+
+    }
 
 }

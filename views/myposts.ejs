@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>my posts</title>
 </head>
 <body>
     <h1>all your posts are display here</h1>
+    <a href="/dashboard">Go To Dashboard</a>
+
+    <ul>
+        <% posts.forEach(mypost =>{%>
+          <li style="text-decoration: none; list-style-type: none; ">
+            <% if(mypost.userId == user.id){%>
+                <img src="<%= mypost.image%>" alt="" width="15%">
+                <form action="/deletePost/<%= mypost._id %>?_method=DELETE" method="POST">
+                  <button class="fa fa-trash" type="submit"></button> 
+                </form>
+                <span>Post Title: <%= mypost.title%></span><br>
+                <span>Post: <%= mypost.post%></span>
+           <% }else{%>
+              <img src="<%= mypost.image%>" alt="" width="15%">
+              <span>Post Title: <%= mypost.title%></span><br>
+              <span>Post: <%= mypost.post%></span>
+           <%}%>
+          </li>
+       <% })%>
+      
+
+      </ul>
 </body>
 </html>

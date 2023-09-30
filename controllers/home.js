@@ -3,10 +3,11 @@ const Post = require('../models/Post');
 const User = require('../models/User');
 
 module.exports = {
+
     gethome: async (req, res)=>{
         try {
-            const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-            res.render('index', { posts: posts });
+            const posts = await Post.find().sort({ createdAt: "desc" }).populate('userId').lean();
+            res.render('index', { posts: posts});
       
           } catch (error) {
             console.error(error);
@@ -15,9 +16,15 @@ module.exports = {
         },
 
     getlogin: (req, res)=>{
+        if(req.user){
+           return  res.redirect('/dashboard')
+        }
         res.render('login')
     },
     getSignup: (req, res)=>{
+        if(req.user){
+          return  res.redirect('/dashboard')
+        }
         res.render('signup')
     }
 }
