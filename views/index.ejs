@@ -15,12 +15,10 @@
     <a href="/signup">sign-up</a>
 
     <section>
-  
         <ul>
           <% for (let i = 0; i < posts.length; i++) { %>
             <li style="list-style-type: none;">
               <span>Posted By: <%= posts[i].userId.username %></span><br>
-              
               <span>Title: <%= posts[i].title %></span><br>
               <a href="#"><img src="<%= posts[i].image %>" alt="" width="15%"></a><br>
               <span>Post: <%= posts[i].post %></span>
