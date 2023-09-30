@@ -2,10 +2,7 @@ const mongoose = require('mongoose')
 
 //create user table
 const PostSchema = new mongoose.Schema({
-    authorName: {
-        type: String, 
-        required: true},
-    title: {
+   title: {
         type: String, 
         required: true},
     post: {

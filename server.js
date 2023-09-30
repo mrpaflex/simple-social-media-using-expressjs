@@ -31,7 +31,7 @@ app.use(methodOverride("_method"));
 app.use(session({
     secret: process.env.SECRET_TOKEN,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: MongoStore.create({mongoUrl: process.env.DB_URI}),
   }));
 
