@@ -20,7 +20,7 @@ router.post('/createPost', ensureAuth, upload.single("file"), postController.Mak
 router.get('/post', ensureAuth, postController.gotopost )
 
 //here is for delete
-router.delete('/myposts/deletePost/:id', ensureAuth,  postController.deletePost)
+router.delete('/deletePost/:id', ensureAuth,  postController.deletePost)
 
 //here is for like
 router.put('/likePost/:id', ensureAuth,  postController.likePosts);
