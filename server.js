@@ -40,8 +40,8 @@ app.use(passport.authenticate('session'));
 
 app.use('/', mainRoutes)
 app.use('/dashboard', dashboardRoutes)
-app.use('/dashboard/post', dashboardRoutes)
-app.use('/dashboard/myPost', dashboardRoutes)
+// app.use('/dashboard/post', dashboardRoutes)
+// app.use('/dashboard/myPost', dashboardRoutes)
 
 app.listen(process.env.PORT, ()=>{
     console.log(`i am running on port ${process.env.PORT} you can come in`)
