@@ -13,5 +13,3 @@ router.get('/myPost', ensureAuth, postController.myPosts )
 router.post('/createPost', ensureAuth, upload.single("file"), postController.MakePost )
 
 module.exports = router;
-
-// {/* <span>Author Name: <%= posts[i].authorName %></span><br></br> */}
