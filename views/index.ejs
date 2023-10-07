@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>home page</title>
 </head>
 <body>
@@ -21,20 +22,22 @@
             <li style="list-style-type: none;">
               <span>Posted By: <%= posts[i].userId.username %></span><br>
               <span>Title: <%= posts[i].title %></span><br>
-              <a href="#"><img src="<%= posts[i].image %>" alt="" width="15%"></a><br>
+              <a href="#"><img src="<%= posts[i].image %>" alt="" ></a><br>
               <span>Post: <%= posts[i].post %></span>
               <span>
-                <form action="/likePost/<%= posts[i]._id %>?_method=PUT" method="POST">
-                  <button type="submit">Like</button>
+                <form   action="/likePost/<%= posts[i]._id %>?_method=PUT" method="POST">
+                  <button  type="submit"  >Like</button>
                   <!-- this like by right should'nt be here -->
                   Likes: <%= posts[i].likes %>
                 </form>
-              
+                
               </span>
             </li>
           <% } %>          
         </ul>
 
     </section>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

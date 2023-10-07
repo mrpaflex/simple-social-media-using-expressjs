@@ -41,14 +41,18 @@ module.exports = {
     },
 
     likePosts: async (req, res)=>{
+    
         try {
             await Post.findByIdAndUpdate(
-                { _id: req.params.id},
+                // { _id: req.params.id},
+                    req.params.id,
                 {
                     $inc: {likes: 1}
                 }
                 );
-                res.redirect('/')
+                res.redirect(`/?id=${req.params.id}`)
+                
+              
         } catch (error) {
             console.log(error)
         }
