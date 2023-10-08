@@ -4,7 +4,9 @@ section ul li img{
     width: 100%
 }
 
-#bod{
-    border-color: brown;
-    background-color: rgb(219, 219, 219);
+
+
+*{
+    margin: 10px;
+    padding: 0;
 }
