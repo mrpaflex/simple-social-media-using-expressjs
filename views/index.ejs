@@ -26,7 +26,8 @@
               <span>Post: <%= posts[i].post %></span>
               <span>
                 <form   action="/likePost/<%= posts[i]._id %>?_method=PUT" method="POST">
-                  <button  type="submit"  >Like</button>
+                 
+                  <button class="fa fa-thumbs-up" type="submit"  ></button>
                   <!-- this like by right should'nt be here -->
                   Likes: <%= posts[i].likes %>
                 </form>
