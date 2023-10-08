@@ -18,23 +18,24 @@
 
     <section>
         <ul>
-          <% for (let i = 0; i < posts.length; i++) { %>
-            <li style="list-style-type: none;">
-              <span>Posted By: <%= posts[i].userId.username %></span><br>
-              <span>Title: <%= posts[i].title %></span><br>
-              <a href="#"><img src="<%= posts[i].image %>" alt="" ></a><br>
-              <span>Post: <%= posts[i].post %></span>
-              <span>
-                <form   action="/likePost/<%= posts[i]._id %>?_method=PUT" method="POST">
-                 
-                  <button class="fa fa-thumbs-up" type="submit"  ></button>
-                  <!-- this like by right should'nt be here -->
-                  Likes: <%= posts[i].likes %>
-                </form>
-                
-              </span>
-            </li>
-          <% } %>          
+          
+            <% for (let i = 0; i < posts.length; i++) { %>
+              <li style="list-style-type: none;">
+                <span>Posted By: <%= posts[i].userId.username %></span><br>
+                <span>Title: <%= posts[i].title %></span><br>
+                <a href="#"><img src="<%= posts[i].image %>" alt="" ></a><br>
+                <span>Post: <%= posts[i].post %></span>
+                <span>
+                  <form   action="/likePost/<%= posts[i]._id %>?_method=PUT" method="POST">
+                   
+                    <button class="fa fa-thumbs-up" type="submit"  ></button>
+                    <!-- this like by right should'nt be here -->
+                    Likes: <%= posts[i].likes %>
+                  </form>
+                  
+                </span>
+              </li>
+            <% } %>    
         </ul>
 
     </section>
